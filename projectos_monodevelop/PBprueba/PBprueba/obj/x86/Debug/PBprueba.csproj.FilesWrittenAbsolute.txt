@@ -1,0 +1,6 @@
+/home/philppe/Estudi/projectos_monodevelop/PBprueba/PBprueba/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/philppe/Estudi/projectos_monodevelop/PBprueba/PBprueba/bin/Debug/PBprueba.exe.mdb
+/home/philppe/Estudi/projectos_monodevelop/PBprueba/PBprueba/bin/Debug/PBprueba.exe
+/home/philppe/Estudi/projectos_monodevelop/PBprueba/PBprueba/obj/x86/Debug/PBprueba.exe
+/home/philppe/Estudi/projectos_monodevelop/PBprueba/PBprueba/obj/x86/Debug/PBprueba.exe.mdb
+/home/philppe/Estudi/projectos_monodevelop/PBprueba/PBprueba/bin/Debug/MySql.Data.dll
