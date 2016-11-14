@@ -1,0 +1,5 @@
+/home/philppe/Estudi/projectos_monodevelop/estudi/estudi/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/philppe/Estudi/projectos_monodevelop/estudi/estudi/bin/Debug/estudi.exe.mdb
+/home/philppe/Estudi/projectos_monodevelop/estudi/estudi/bin/Debug/estudi.exe
+/home/philppe/Estudi/projectos_monodevelop/estudi/estudi/obj/x86/Debug/estudi.exe
+/home/philppe/Estudi/projectos_monodevelop/estudi/estudi/obj/x86/Debug/estudi.exe.mdb

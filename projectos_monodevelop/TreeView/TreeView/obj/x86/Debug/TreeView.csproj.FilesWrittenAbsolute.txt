@@ -1,0 +1,6 @@
+/home/philppe/Estudi/projectos_monodevelop/TreeView/TreeView/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/philppe/Estudi/projectos_monodevelop/TreeView/TreeView/obj/x86/Debug/TreeView.gtk-gui.gui.stetic
+/home/philppe/Estudi/projectos_monodevelop/TreeView/TreeView/bin/Debug/TreeView.exe.mdb
+/home/philppe/Estudi/projectos_monodevelop/TreeView/TreeView/bin/Debug/TreeView.exe
+/home/philppe/Estudi/projectos_monodevelop/TreeView/TreeView/obj/x86/Debug/TreeView.exe
+/home/philppe/Estudi/projectos_monodevelop/TreeView/TreeView/obj/x86/Debug/TreeView.exe.mdb

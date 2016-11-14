@@ -1,0 +1,6 @@
+/home/philppe/Estudi/PBingo/PBingo/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/philppe/Estudi/PBingo/PBingo/obj/x86/Debug/PBingo.gtk-gui.gui.stetic
+/home/philppe/Estudi/PBingo/PBingo/bin/Debug/PBingo.exe.mdb
+/home/philppe/Estudi/PBingo/PBingo/bin/Debug/PBingo.exe
+/home/philppe/Estudi/PBingo/PBingo/obj/x86/Debug/PBingo.exe
+/home/philppe/Estudi/PBingo/PBingo/obj/x86/Debug/PBingo.exe.mdb
