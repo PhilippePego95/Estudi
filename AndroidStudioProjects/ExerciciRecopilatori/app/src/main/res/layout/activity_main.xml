@@ -23,61 +23,81 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="20dp"
+        android:id="@+id/RGrup">
         <RadioButton
-            android:text="RadioButton"
+            android:text="Tarifa Normal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="43dp"
-            android:id="@+id/radioButton"
+            android:id="@+id/rNormal"
             android:layout_below="@+id/textView"
             android:layout_alignParentEnd="true" />
 
         <RadioButton
-            android:text="RadioButton"
+            android:text="Tarifa Urgent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButton2"
-            android:layout_below="@+id/radioButton"
+            android:id="@+id/rUrgent"
+            android:layout_below="@+id/rNormal"
             android:layout_alignParentEnd="true" />
     </RadioGroup>
 
     <CheckBox
-        android:text="CheckBox"
+        android:text="Caixa de regal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/checkBox"
+        android:id="@+id/cRegal"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true" />
 
     <CheckBox
-        android:text="CheckBox"
+        android:text="Tarjeta de regal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/checkBox"
+        android:layout_alignTop="@+id/cRegal"
         android:layout_alignParentEnd="true"
-        android:id="@+id/checkBox3" />
+        android:id="@+id/cTarjeta" />
 
     <Button
-        android:text="Button"
+        android:text="Calcular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/button" />
 
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/spinner"
-        android:layout_above="@+id/checkBox"
-        android:layout_alignParentStart="true" />
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/images"
         android:id="@+id/imageView"
-        android:layout_below="@+id/checkBox"
+        android:layout_below="@+id/cRegal"
         android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/ePes"
+        android:layout_alignBaseline="@+id/textView6"
+        android:layout_alignBottom="@+id/textView6"
+        android:layout_toEndOf="@+id/textView6"
+        android:layout_marginStart="26dp" />
+
+    <TextView
+        android:text="Pes del objecte: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView6"
+        android:layout_above="@+id/cRegal"
+        android:layout_alignParentStart="true" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/triar"
+        android:layout_below="@+id/RGrup"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

@@ -16,7 +16,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".Acerca" />
-        <activity android:name=".Dibujar"></activity>
+        <activity android:name=".Dibujar" />
+        <activity android:name=".Calcular" />
+        <activity android:name=".DestiZona"></activity>
     </application>
 
 </manifest>

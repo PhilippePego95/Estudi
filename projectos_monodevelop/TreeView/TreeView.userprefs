@@ -1,23 +1,13 @@
 ﻿<Properties StartupItem="TreeView/TreeView.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="TreeView" expanded="True">
-            <Node name="TreeView" expanded="True">
-              <Node name="MainWindow.cs" selected="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
+  <MonoDevelop.Ide.Workbench ActiveDocument="TreeView/MainWindow.cs">
+    <Files>
+      <File FileName="TreeView/MainWindow.cs" Line="1" Column="1" />
+      <File FileName="TreeView/Program.cs" Line="1" Column="1" />
+    </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <RunToCursorBreakpoint file="/home/philppe/Estudi/projectos_monodevelop/estudi/estudi/Program.cs" line="14" column="2" />
-      <RunToCursorBreakpoint file="/home/philppe/Estudi/projectos_monodevelop/estudi/estudi/Program.cs" line="13" column="3" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
