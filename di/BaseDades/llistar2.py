@@ -25,9 +25,10 @@ for row in cursor:
 	lista4.append(row[4])
 	lista5.append(row[5])
 	
-	print(lista0[u],lista1[u],lista3[u],lista4[u],lista2[u])	
-	u=u+1
+	a=(lista0[u],lista1[u],lista2[u],lista3[u],lista4[u],lista5[u])	
+	print (a)
 
+	u=u+1
 
 
 
