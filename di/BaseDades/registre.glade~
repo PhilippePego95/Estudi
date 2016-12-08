@@ -464,6 +464,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="ellipsize">end</property>
+                <property name="xalign">0</property>
               </object>
               <packing>
                 <property name="left_attach">1</property>
@@ -690,7 +691,15 @@
           </packing>
         </child>
         <child>
-          <placeholder/>
+          <object class="GtkTextView" id="textview1">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
         </child>
         <child>
           <object class="GtkButton" id="button1">

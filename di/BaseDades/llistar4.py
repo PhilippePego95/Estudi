@@ -23,8 +23,7 @@ class MyWindow(Gtk.ApplicationWindow):
         self.set_default_size(250, 100)
         self.set_border_width(10)
 		
-		listmodel=[]
-		listmodel = Gtk.ListStore(int, str, str,str, str, str)
+		listmodel = Gtk.ListStore(str, str, str,str, str, str)
 		for row in cursor:	
 			listmodel.append(row[0])
 			listmodel.append(row[1])

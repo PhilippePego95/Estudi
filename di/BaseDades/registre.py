@@ -1,7 +1,8 @@
 #! /usr/bin/env python
 # -*- coding: UTF-8 -*-
+import gi
+gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
-import sqlite3
 
 def on_aceptar_clicked(button):
 	us= Usuari.get_text() 
@@ -57,7 +58,7 @@ def on_veure_clicked(button):
 	lista4=[]
 	lista5=[]
 	llista=[]
-	u=0
+	
 	#a=[]
 	for row in cursor:	
 		lista0.append(row[0])
@@ -69,7 +70,7 @@ def on_veure_clicked(button):
 		
 		#a=(lista0[u]+lista1[u]+lista2[u]+lista3[u]+lista4[u]+lista5[u]+"\n")	
 		#a=a+a
-		u=u+1
+		
 		text.set_text(str(lista0))
 		text2.set_text(str(lista1))
 		text3.set_text(str(lista2))
@@ -124,6 +125,7 @@ text4=builder.get_object("text4")
 text5=builder.get_object("text5")
 text6=builder.get_object("text6")
 
+textview=builder.get_object("textview")
 finestra2 = builder.get_object("window2")
 finestra3 = builder.get_object("window3")
 

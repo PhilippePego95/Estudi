@@ -46,7 +46,7 @@ class MyWindow(Gtk.ApplicationWindow):
             view.append_column(col)
 
         # metode per a seleccionar un element de la llista
-      #  view.get_selection().connect("changed", self.on_changed)
+        view.get_selection().connect("changed", self.on_changed)
 
         self.label = Gtk.Label()
         self.label.set_text("")
@@ -58,11 +58,11 @@ class MyWindow(Gtk.ApplicationWindow):
         self.add(grid)
 
         #metode per selecionar un element i monstrar-lo en un label
-    #def on_changed(self, selection):
-     #   (model, iter) = selection.get_selected()
-     #   self.label.set_text("\n %s %s %s" %
-     #                       (model[iter][0],  model[iter][1], model[iter][2]))
-      #  return True
+    def on_changed(self, selection):
+        (model, iter) = selection.get_selected()
+        self.label.set_text("\n %s %s %s" %
+                          (model[iter][0],  model[iter][1]))
+        return True
 
 
 class MyApplication(Gtk.Application):

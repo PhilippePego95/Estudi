@@ -14,6 +14,7 @@ for row in cursor:
    print "NAME = ", row[4]
    print "SUBNAME = ", row[5]
    print "ADRESS = ", row[6], "\n"
+   print "Registre = ", row[0], row[1], row[2], row[3], row[4], row[5], row[6], "\n"
 conn.commit()
 print "Records created successfully";
 conn.close()
