@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <!-- interface-requires gtk+ 3.0 -->
+  <object class="GtkListStore" id="myliststore">
+    <columns>
+      <!-- column-name code -->
+      <column type="gchararray"/>
+      <!-- column-name legible -->
+      <column type="gchararray"/>
+    </columns>
+  </object>
+  <object class="GtkWindow" id="window">
+    <property name="can_focus">False</property>
+    <property name="window_position">center-always</property>
+    <property name="default_width">400</property>
+    <signal name="destroy" handler="main_quit" swapped="no"/>
+    <child>
+      <object class="GtkBox" id="box">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkLabel" id="label">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Best color in the world:</property>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkComboBox" id="mycombobox">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="model">myliststore</property>
+            <signal name="changed" handler="combobox_changed" swapped="no"/>
+            <child>
+              <object class="GtkCellRendererText" id="renderer"/>
+              <attributes>
+                <attribute name="text">1</attribute>
+              </attributes>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
