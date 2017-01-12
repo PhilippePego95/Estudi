@@ -3,15 +3,15 @@ package com.example.philippe.loginapp;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-
+// http://www.sgoliver.net/blog/bases-de-datos-en-android-i-primeros-pasos/
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,35 +24,62 @@ public class MainActivity extends AppCompatActivity {
         et1 = (EditText) findViewById(R.id.etUsuari);
         et2 = (EditText) findViewById(R.id.etContrasenya);
         Button Entrar = (Button) findViewById(R.id.Entrar);
+        Button Salir = (Button) findViewById(R.id.Salir);
+        final Button Registrar = (Button) findViewById(R.id.Registrar);
 
 
         Entrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                String name=et1.getText().toString();
-                String pass=et2.getText().toString();
-                Toast.makeText(getApplicationContext(),"Entrant..."+name+" "+pass,Toast.LENGTH_LONG).show();
 
-                DBHelper admin=new DBHelper(MainActivity.this, "instituto",null,1);
+                DBHelper admin=new DBHelper(MainActivity.this,"instituto",null,1);
                 SQLiteDatabase db=admin.getWritableDatabase();
-                fila=db.rawQuery("SELECT usuario,contrasenya from usuarios where usuario= '"+name+"' ",null);
 
-        /*      while (fila.moveToFirst()== true){
+                String usuario=et1.getText().toString();
+                String contrasena=et2.getText().toString();
+                fila=db.rawQuery("select usuario,contrasena from usuarios where usuario='"+usuario+"' and  contrasena='"+contrasena+"'",null);
+                        //preguntamos si el cursor tiene algun valor almacenado
+                if(fila.moveToFirst()==true){
+
+                    //capturamos los valores del cursos y lo almacenamos en variable
                     String usua=fila.getString(0);
-                   // String pas=fila.getString(1);
-                    if (name.equals(usua)){
-                       // if (name.equals(usua)&&pass.equals(pas)){
-                        Intent menu=new Intent(MainActivity.this, Menu.class);
-                        startActivity(menu);
+                    String pass=fila.getString(1);
+
+                    //preguntamos si los datos ingresados son iguales
+                    if (usuario.equals(usua)&&contrasena.equals(pass)){
+
+                        //si son iguales entonces vamos a otra ventana
+
+                        //Menu es una nueva actividad empty
+                        Intent ven=new Intent(MainActivity.this,Menu.class);
+                        startActivity(ven);
+
+                        //limpiamos las las cajas de texto
                         et1.setText("");
                         et2.setText("");
-                    }else
-                        Toast.makeText(getApplicationContext(),"Usuari i contrasenya incorrectes",Toast.LENGTH_LONG).show();
+                    }
+                }else{
+                    Toast toast1 = Toast.makeText(getApplicationContext(),"error...", Toast.LENGTH_SHORT);
+                    toast1.show();
 
-               }*/
+                }
+            }
+        });
+        Salir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        Registrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent ven=new Intent(MainActivity.this,Registre.class);
+                startActivity(ven);
             }
         });
     }
-
 }
+
+
