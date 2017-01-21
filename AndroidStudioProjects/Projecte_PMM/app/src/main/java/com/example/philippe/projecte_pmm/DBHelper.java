@@ -11,6 +11,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 public class DBHelper  extends SQLiteOpenHelper {
+   // public DBHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+  //      super(context, name, factory, version);
+  //  }
+
     public DBHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }

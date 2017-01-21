@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.lang.reflect.Array;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,14 +32,16 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+                String nom =et1.getText().toString();
+                String pw=et2.getText().toString();
+
 
 
                 DBHelper admin=new DBHelper(MainActivity.this,"instituto",null,1);
                 SQLiteDatabase db=admin.getWritableDatabase();
 
-                String usuario=et1.getText().toString();
-                String contrasena=et2.getText().toString();
-                fila=db.rawQuery("select usuario,contrasena from usuarios where usuario='"+usuario+"' and  contrasena='"+contrasena+"'",null);
+
+                fila=db.rawQuery("select usuario,contrasena from usuarios where usuario='"+nom+"' and  contrasena='"+pw+"'",null);
                 //preguntamos si el cursor tiene algun valor almacenado
                 if(fila.moveToFirst()==true){
 
@@ -46,18 +50,21 @@ public class MainActivity extends AppCompatActivity {
                     String pass=fila.getString(1);
 
                     //preguntamos si los datos ingresados son iguales
-                    if (usuario.equals(usua)&&contrasena.equals(pass)){
+                    if (nom.equals(usua)&&pw.equals(pass)){
 
                         //si son iguales entonces vamos a otra ventana
 
                         //Menu es una nueva actividad empty
                         Intent ventana=new Intent(MainActivity.this,Inici.class);
+                        ventana.putExtra("nom",et1.getText().toString());
+                        ventana.putExtra("pass",et2.getText().toString());
+
                         startActivity(ventana);
                         Toast toast1 = Toast.makeText(getApplicationContext(),"entrant...", Toast.LENGTH_SHORT);
                         toast1.show();
                         //limpiamos las las cajas de texto
-                        et1.setText("");
-                        et2.setText("");
+                      //  et1.setText("");
+                       // et2.setText("");
                     }
                 }else{
                     Toast toast1 = Toast.makeText(getApplicationContext(),"error...", Toast.LENGTH_SHORT);
@@ -69,10 +76,10 @@ public class MainActivity extends AppCompatActivity {
         Salir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //finish();
-                Intent ven=new Intent(MainActivity.this,Fragment.class);
-                startActivity(ven);
-            }
+                finish();
+               // Intent ven=new Intent(MainActivity.this,Fragment.class);
+
+           }
         });
         Registrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,5 +90,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
+
 
 

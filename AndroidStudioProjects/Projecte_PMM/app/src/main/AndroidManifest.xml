@@ -26,7 +26,6 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Info" />
         <activity android:name=".Inici" />
-        <activity android:name=".Fragment"></activity>
     </application>
 
 </manifest>

@@ -4,64 +4,48 @@ package com.example.philippe.projecte_pmm;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.content.Intent;
 import android.os.Bundle;
-import android.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 
 
+public class MyDialogFragment  extends DialogFragment {
 
-public class MyDialogFragment  extends AppCompatActivity{
-        //DialogFragment {
+    public static MyDialogFragment newInstance(String valor) {
+        MyDialogFragment frag = new MyDialogFragment();
 
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inici);
-    //public static MyDialogFragment newInstance(String valor) {
-    //    MyDialogFragment frag = new MyDialogFragment();
-        // podemos aprovechar para pasar parÃ¡metros mediante bundle
-	/*
-	Bundle bundle = new Bundle();
-	bundle("clave", valor);
-	frag.setArguments(bundle);
-	*/
-   //    return frag;
-   // }
+        return frag;
 
+    }
 
-  //  public Dialog onCreateDialog(Bundle savedInstanceState) {
-      //  LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(LAYOUT_INFLATER_SERVICE);
+    @Override
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
+        LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(LAYOUT_INFLATER_SERVICE);
 
-      //  ViewGroup dlgview = (ViewGroup) inflater.inflate(R.layout.fragment_my_dialog, null);
-        // botÃ³n nuevo Fragment
-       /* Button buttonShow = (Button) dlgview.findViewById(R.id.newFrag);
-        buttonShow.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-            //    ((MainActivity) getActivity()).addFragment();
-            }
-        });
-        // botÃ³n cancelar
-        Button buttonCancel = (Button) dlgview.findViewById(R.id.cancel);
-        buttonCancel.setOnClickListener(new View.OnClickListener() {
+        ViewGroup dlgview = (ViewGroup) inflater.inflate(R.layout.dialog_fragment, null);
+
+        TextView name=(TextView) dlgview.findViewById(R.id.infoUser);
+        TextView pass=(TextView) dlgview.findViewById(R.id.infoPass);
+        name.setText(getActivity().getIntent().getStringExtra("nom"));
+        pass.setText(getActivity().getIntent().getStringExtra("pass"));
+
+        Button home =(Button) dlgview.findViewById(R.id.bhome);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
                 dismiss();
             }
         });
-        // botÃ³n ir a Fragment anterior
-        Button buttonBack = (Button) dlgview.findViewById(R.id.back);
-        buttonBack.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                getFragmentManager().popBackStack();
-            }
-        });*/
 
         // asignar el dialog a la vista
-      //  return new AlertDialog.Builder(getActivity()).setView(dlgview).create();
+        return new AlertDialog.Builder(getActivity()).setView(dlgview).create();
     }
 
 }
