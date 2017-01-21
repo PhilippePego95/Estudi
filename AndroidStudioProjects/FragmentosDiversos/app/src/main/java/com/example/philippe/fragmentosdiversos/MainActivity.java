@@ -29,26 +29,26 @@ public class MainActivity extends AppCompatActivity {
 
         if (savedInstanceState == null) {
             // aÃ±adir el primer fragment
-            Fragment newFragment = SimpleFragment.newInstance(mStackPosition);
+          //  Fragment newFragment = SimpleFragment.newInstance(mStackPosition);
             FragmentTransaction ft = getFragmentManager().beginTransaction();
-            ft.add(R.id.fragmentShow, newFragment).commit();
+          //  ft.add(R.id.fragmentShow, newFragment).commit();
         } else {
             mStackPosition = savedInstanceState.getInt("position");
         }
 
         Button buttonDialogF = (Button)findViewById(R.id.showDialogF);
-        Button buttonDialog = (Button)findViewById(R.id.showDialog);
+      //  Button buttonDialog = (Button)findViewById(R.id.showDialog);
 
         buttonDialogF.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 showDialogF();
             }
-        });
-        buttonDialog.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                showDialog();
-            }
-        });
+       });
+     ////   buttonDialog.setOnClickListener(new View.OnClickListener() {
+        //    public void onClick(View v) {
+         //       showDialog();
+         //   }
+       // });
 
 
 
@@ -56,14 +56,14 @@ public class MainActivity extends AppCompatActivity {
     void addFragment() {
         mStackPosition++;
         // Instanciamos nuevo Fragment
-        Fragment newFragment = SimpleFragment.newInstance(mStackPosition);
+    //    Fragment newFragment = SimpleFragment.newInstance(mStackPosition);
         // Se aÃ±ade el Fragment a la actividad
-        FragmentTransaction ft = getFragmentManager().beginTransaction();
-        ft.replace(R.id.fragmentShow, newFragment);
-        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+       // FragmentTransaction ft = getFragmentManager().beginTransaction();
+       // ft.replace(R.id.fragmentShow, newFragment);
+        //ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         // poneos la transacion a la pila
-        ft.addToBackStack(null);
-        ft.commit();
+       // ft.addToBackStack(null);
+       // ft.commit();
     }
     @Override
     public void onSaveInstanceState(Bundle outState) {
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         outState.putInt("position", mStackPosition);
     }
 
-    void showDialog() {
+   /* void showDialog() {
         new AlertDialog.Builder(this)
                 .setTitle("Selecciona accion a realizar")
                 .setPositiveButton("Nuevo",new DialogInterface.OnClickListener() {
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                 )
                 .create().show();
-    }
+    }*/
 
     void showDialogF() {
         DialogFragment newFragment = MyDialogFragment.newInstance(

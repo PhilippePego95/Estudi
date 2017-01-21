@@ -37,6 +37,8 @@ public class MyDialogFragment  extends DialogFragment {
         LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(LAYOUT_INFLATER_SERVICE);
 
         ViewGroup dlgview = (ViewGroup) inflater.inflate(R.layout.dialog_fragment, null);
+
+
         // botÃ³n nuevo Fragment
         Button buttonShow = (Button) dlgview.findViewById(R.id.newFrag);
         buttonShow.setOnClickListener(new View.OnClickListener() {
@@ -44,6 +46,8 @@ public class MyDialogFragment  extends DialogFragment {
                 ((MainActivity) getActivity()).addFragment();
             }
         });
+
+
         // botÃ³n cancelar
         Button buttonCancel = (Button) dlgview.findViewById(R.id.cancel);
         buttonCancel.setOnClickListener(new View.OnClickListener() {
@@ -51,6 +55,8 @@ public class MyDialogFragment  extends DialogFragment {
                 dismiss();
             }
         });
+
+
         // botÃ³n ir a Fragment anterior
         Button buttonBack = (Button) dlgview.findViewById(R.id.back);
         buttonBack.setOnClickListener(new View.OnClickListener() {
