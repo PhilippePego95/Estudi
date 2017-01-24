@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import java.lang.reflect.Array;
@@ -16,7 +17,7 @@ import java.lang.reflect.Array;
 public class MainActivity extends AppCompatActivity {
 
     EditText et1,et2;
-    private Cursor fila;
+    private Cursor fila,f;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         Button Entrar = (Button) findViewById(R.id.Entrar);
         Button Salir = (Button) findViewById(R.id.Salir);
         final Button Registrar = (Button) findViewById(R.id.Registrar);
-
 
         Entrar.setOnClickListener(new View.OnClickListener() {
 

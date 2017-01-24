@@ -8,13 +8,13 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.*;
+import android.widget.Spinner;
 
 
 public class Registre extends AppCompatActivity {
-    EditText user,pass;
+    EditText user,pass,passAd;
+    Spinner classes;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,9 +22,32 @@ public class Registre extends AppCompatActivity {
 
         user=(EditText) findViewById(R.id.nuser);
         pass=(EditText) findViewById(R.id.npass);
+        passAd=(EditText) findViewById(R.id.passAdmin);
+        classes=(Spinner) findViewById(R.id.spinnerClass);
+
         Button gurdar=(Button) findViewById(R.id.nguardar);
+        final RadioButton alumne = (RadioButton) findViewById(R.id.radioButton);
+        final RadioButton profe = (RadioButton) findViewById(R.id.radioButton2);
+        passAd.setVisibility(View.INVISIBLE);
+        classes.setVisibility(View.INVISIBLE);
 
 
+        alumne.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                passAd.setVisibility(View.INVISIBLE);
+                classes.setVisibility(View.VISIBLE);
+
+            }
+        });
+        profe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                passAd.setVisibility(View.VISIBLE);
+                classes.setVisibility(View.INVISIBLE);
+
+            }
+        });
         gurdar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

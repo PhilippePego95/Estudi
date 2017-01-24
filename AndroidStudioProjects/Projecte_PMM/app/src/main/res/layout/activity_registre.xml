@@ -43,16 +43,71 @@
         android:layout_below="@+id/textView5"
         android:layout_alignParentStart="true" />
 
-    <EditText
+    <Button
+        android:text="Guardar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:hint="contrasenya..."
-        android:ems="10"
-        android:id="@+id/npass"
-        android:layout_alignBottom="@+id/textView6"
-        android:layout_toEndOf="@+id/textView6"
-        android:layout_marginStart="10dp" />
+        android:id="@+id/nguardar"
+        android:layout_marginBottom="58dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="23dp"
+        android:layout_above="@+id/nguardar"
+        android:layout_alignParentStart="true">
+
+
+        <TextView
+            android:text="Tipus d'usuaris: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tipus"
+            android:layout_above="@+id/radioGroup2"
+            android:layout_alignParentStart="true"
+            android:layout_weight="1"
+            android:textStyle="normal|bold"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:text="Alumne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton"
+            android:layout_centerVertical="true"
+            android:layout_alignStart="@+id/linearLayout" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnerClass"
+            android:layout_alignBottom="@+id/radioButton2"
+            android:layout_alignStart="@+id/nguardar" />
+
+        <RadioButton
+            android:text="Professor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButton2"
+            android:layout_weight="1"
+            android:layout_marginTop="13dp"
+            android:layout_below="@+id/passAdmin"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="password.."
+            android:ems="10"
+            android:id="@+id/passAdmin"
+            android:layout_weight="1"
+            android:layout_alignTop="@+id/radioButton"
+            android:layout_alignParentEnd="true" />
+
+    </RadioGroup>
 
     <EditText
         android:layout_width="wrap_content"
@@ -61,16 +116,20 @@
         android:hint="usuari.."
         android:ems="10"
         android:id="@+id/nuser"
+        android:layout_alignBaseline="@+id/textView5"
         android:layout_alignBottom="@+id/textView5"
-        android:layout_alignStart="@+id/npass" />
+        android:layout_toEndOf="@+id/textView5"
+        android:layout_marginStart="20dp" />
 
-    <Button
-        android:text="Guardar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView6"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="84dp"
-        android:id="@+id/nguardar" />
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="contrasenya..."
+            android:ems="10"
+            android:id="@+id/npass"
+        android:layout_alignBaseline="@+id/textView6"
+        android:layout_alignBottom="@+id/textView6"
+        android:layout_alignStart="@+id/nuser" />
 
 </RelativeLayout>

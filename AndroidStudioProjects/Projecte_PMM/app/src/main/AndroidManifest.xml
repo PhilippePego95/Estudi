@@ -24,8 +24,9 @@
             android:name=".Registre"
             android:label="@string/title_activity_registre"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Info" />
         <activity android:name=".Inici" />
+        <activity android:name=".Users" />
+        <activity android:name=".Spinner"></activity>
     </application>
 
 </manifest>
