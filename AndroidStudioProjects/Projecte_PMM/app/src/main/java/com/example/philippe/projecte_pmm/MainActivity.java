@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         Button Entrar = (Button) findViewById(R.id.Entrar);
         Button Salir = (Button) findViewById(R.id.Salir);
         final Button Registrar = (Button) findViewById(R.id.Registrar);
+        DBHelper admin=new DBHelper(MainActivity.this,"Registre.db",null,1);
 
         Entrar.setOnClickListener(new View.OnClickListener() {
 
@@ -36,12 +37,11 @@ public class MainActivity extends AppCompatActivity {
                 String pw=et2.getText().toString();
 
 
+                DBHelper admin=new DBHelper(MainActivity.this,"Registre.db",null,1);
+               SQLiteDatabase db=admin.getWritableDatabase();
 
-                DBHelper admin=new DBHelper(MainActivity.this,"instituto",null,1);
-                SQLiteDatabase db=admin.getWritableDatabase();
 
-
-                fila=db.rawQuery("select usuario,contrasena from usuarios where usuario='"+nom+"' and  contrasena='"+pw+"'",null);
+                fila=db.rawQuery("select usuario,contrasena from us where usuario='"+nom+"' and  contrasena='"+pw+"'",null);
                 //preguntamos si el cursor tiene algun valor almacenado
                 if(fila.moveToFirst()==true){
 

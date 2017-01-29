@@ -13,13 +13,14 @@ import android.widget.Spinner;
 
 
 public class Registre extends AppCompatActivity {
-    EditText user,pass,passAd;
+    EditText user,pass,passAd,name;
     Spinner classes;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registre);
 
+        name=(EditText) findViewById(R.id.nname);
         user=(EditText) findViewById(R.id.nuser);
         pass=(EditText) findViewById(R.id.npass);
         passAd=(EditText) findViewById(R.id.passAdmin);
@@ -51,18 +52,20 @@ public class Registre extends AppCompatActivity {
         gurdar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DBHelper admin=new DBHelper(Registre.this,"instituto",null,1);
+                DBHelper admin=new DBHelper(Registre.this,"Registre.db",null,1);
                 SQLiteDatabase db=admin.getWritableDatabase();
 
+                String nom=name.getText().toString();
                 String usuari=user.getText().toString();
                 String contrasenya=pass.getText().toString();
-
+                Integer punt=0;
+                String root="false";
         /* ContentValues values=new ContentValues();
             values.put("usuario",usuari);
             values.put("contrasena",contrasenya);
         */
 
-                db.execSQL("insert into usuarios (usuario, contrasena) values('"+usuari+"','"+contrasenya+"')");
+                db.execSQL("insert into us (usuario, contrasena,nom,punts,root) values('"+usuari+"','"+contrasenya+"','"+nom+"','"+punt+"','"+root+"')");
                 db.close();
                 Toast toast1 = Toast.makeText(getApplicationContext(),"Guardant...", Toast.LENGTH_SHORT);
                 toast1.show();
