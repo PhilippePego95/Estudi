@@ -13,6 +13,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,6 +22,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class NouMarca extends AppCompatActivity {
+    String cotxe="cotxe1.db";
+
     private Marca[] dades;
     public ArrayList<Marca> marcas = new ArrayList<Marca>();
    private EditText name;
@@ -28,14 +32,22 @@ public class NouMarca extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nou_marca);
          name = (EditText) findViewById(R.id.nmarcas);
+        ImageButton back =(ImageButton) findViewById(R.id.marcainici);
 
 
         Button guardar= (Button) findViewById(R.id.guardarMarca);
 
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                 Intent back=new Intent(NouMarca.this,Inici.class);
+                startActivity(back);
+            }
+        });
         guardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BaseDadesCotxe admin=new BaseDadesCotxe(NouMarca.this,"DBCOTXES.db",null,1);
+                BaseDadesCotxe admin=new BaseDadesCotxe(NouMarca.this,cotxe,null,1);
                 SQLiteDatabase db=admin.getWritableDatabase();
                 String nom=name.getText().toString();
                 db.execSQL("INSERT INTO MARCA values('"+nom+"')");
@@ -47,7 +59,7 @@ public class NouMarca extends AppCompatActivity {
                 startActivity(ventana);
             }
         });
-        BaseDadesCotxe admin=new BaseDadesCotxe(NouMarca.this,"DBCOTXES.db",null,1);
+        BaseDadesCotxe admin=new BaseDadesCotxe(NouMarca.this,cotxe,null,1);
         SQLiteDatabase db=admin.getWritableDatabase();
             //spinner de marca
         if (db != null) {
@@ -72,7 +84,8 @@ public class NouMarca extends AppCompatActivity {
         			} while (c.moveToNext());
         		}
             AdaptadorMarca adaptador = new AdaptadorMarca(this);
-            Spinner spinerMarca = (Spinner) findViewById(R.id.spinnerMarca );
+            ListView spinerMarca =(ListView)findViewById(R.id.spinnerMarca );
+            // Spinner spinerMarca = (Spinner) findViewById(R.id.spinnerMarca );
             spinerMarca.setAdapter(adaptador);
                     //.setAdapter(adaptador);
 

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView42"
+        android:visibility="invisible"
+        android:layout_alignBaseline="@+id/usuari"
+        android:layout_alignBottom="@+id/usuari"
+        android:layout_toEndOf="@+id/textView38" />
+
+    <TextView
+        android:text="Dades:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView35"
+        android:textStyle="normal|bold"
+        android:layout_marginStart="11dp"
+        android:textSize="18sp"
+        android:layout_below="@+id/usuari"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="€"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView41"
+        android:textSize="18sp"
+        android:layout_below="@+id/usuari"
+        android:layout_toEndOf="@+id/datos" />
+
+    <TextView
+        android:text="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView43"
+        android:visibility="invisible"
+        android:layout_alignBaseline="@+id/textView37"
+        android:layout_alignBottom="@+id/textView37"
+        android:layout_toEndOf="@+id/textView37" />
+
+    <TextView
+        android:text="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView40"
+        android:visibility="invisible"
+        android:layout_above="@+id/textView33"
+        android:layout_toEndOf="@+id/textView35" />
+
+    <TextView
+        android:text="dades"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/datos"
+        android:textSize="18sp"
+        android:layout_alignBaseline="@+id/textView40"
+        android:layout_alignBottom="@+id/textView40"
+        android:layout_toEndOf="@+id/textView40" />
+
+    <TextView
+        android:text="usuari"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/usuari"
+        android:textAlignment="textStart"
+        android:textSize="18sp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/textView42"
+        android:layout_marginTop="11dp" />
+
+    <TextView
+        android:text="Usuari:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView38"
+        android:textStyle="normal|bold"
+        android:textSize="18sp"
+        android:layout_alignBaseline="@+id/textView42"
+        android:layout_alignBottom="@+id/textView42"
+        android:layout_toEndOf="@+id/textView35" />
+
+    <TextView
+        android:text="ID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/codi"
+        android:textSize="18sp"
+        android:layout_above="@+id/datos"
+        android:layout_toEndOf="@+id/textView43" />
+
+    <TextView
+        android:text="Id:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView37"
+        android:textStyle="normal|bold"
+        android:textSize="18sp"
+        android:layout_above="@+id/textView35"
+        android:layout_alignStart="@+id/textView35" />
+
+    <TextView
+        android:text="preu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/preu"
+        android:textSize="18sp"
+        android:layout_below="@+id/datos"
+        android:layout_toEndOf="@+id/textView33" />
+
+    <TextView
+        android:text="Preu Total: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView33"
+        android:textStyle="normal|bold"
+        android:textSize="18sp"
+        android:layout_below="@+id/textView35"
+        android:layout_alignStart="@+id/textView35" />
+
+    <TextView
+        android:text="€"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView39"
+        android:layout_alignBaseline="@+id/textView33"
+        android:layout_alignBottom="@+id/textView33"
+        android:layout_toEndOf="@+id/preu" />
+</RelativeLayout>

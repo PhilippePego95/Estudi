@@ -20,7 +20,9 @@
         <activity android:name=".MyDialogFragment" />
         <activity android:name=".NouMarca" />
         <activity android:name=".NouModel" />
-        <activity android:name=".Factura"></activity>
+        <activity android:name=".Factura" />
+        <activity android:name=".Llistat" />
+        <activity android:name=".Delete"></activity>
     </application>
 
 </manifest>

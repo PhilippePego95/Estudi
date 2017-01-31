@@ -21,7 +21,21 @@
         android:textColor="@android:drawable/screen_background_light_transparent"
         android:layout_toEndOf="@+id/textView32"
         android:visibility="invisible"
-        android:layout_alignBottom="@+id/textView32" />
+        android:layout_alignBottom="@+id/textView32"
+        android:textAlignment="textEnd" />
+
+    <TextView
+        android:text="model"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/model"
+        android:textSize="20sp"
+        android:textStyle="normal|bold"
+        android:textAlignment="textStart"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="14dp"
+        android:layout_toStartOf="@+id/textView31" />
 
     <TextView
         android:text="preu"
@@ -29,22 +43,15 @@
         android:layout_height="wrap_content"
         android:id="@+id/preu"
         android:textSize="18sp"
-        android:layout_alignBaseline="@+id/model"
-        android:layout_alignBottom="@+id/model"
-        android:layout_alignEnd="@+id/textView31"
-        android:layout_toEndOf="@+id/model"
-        android:textAlignment="textStart" />
+        android:textAlignment="textEnd"
+        android:layout_above="@+id/textView32"
+        android:layout_toEndOf="@+id/textView32" />
 
     <TextView
-        android:text="model"
+        android:text="€"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/model"
-        android:textSize="24sp"
-        android:textStyle="normal|bold"
-        android:textAlignment="textStart"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="14dp"
-        android:layout_toStartOf="@+id/textView31" />
+        android:id="@+id/textView19"
+        android:layout_above="@+id/textView31"
+        android:layout_toEndOf="@+id/preu" />
 </RelativeLayout>

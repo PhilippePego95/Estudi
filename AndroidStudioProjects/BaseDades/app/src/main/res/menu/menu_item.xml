@@ -6,13 +6,16 @@ xmlns:android="http://schemas.android.com/apk/res/android">
     ]]>
     <item android:title="informació..."
     android:id="@+id/info" />
-    <item android:title="Noves dades"
-        android:icon="@drawable/dicument">
+    <item android:title="Noves dades">
         <menu >
             <item android:title="+ Marca"
                 android:id="@+id/nmarca" />
             <item android:title="+ Model"
                 android:id="@+id/nmodel" />
+            <item android:title="- Marca"
+                android:id="@+id/dell" />
         </menu>
     </item>
+    <item android:title="Lloguers realitzats"
+        android:id="@+id/keyss" />
 </menu>

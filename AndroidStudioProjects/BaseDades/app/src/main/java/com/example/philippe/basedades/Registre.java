@@ -16,6 +16,7 @@ import java.util.ArrayList;
 
 
 public class Registre extends AppCompatActivity {
+    String cotxe="cotxe1.db";
 
     EditText user,pass,name;
     @Override
@@ -33,7 +34,7 @@ public class Registre extends AppCompatActivity {
         gurdar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BaseDadesCotxe admin=new BaseDadesCotxe(Registre.this,"DBCOTXES.db",null,1);
+                BaseDadesCotxe admin=new BaseDadesCotxe(Registre.this,cotxe,null,1);
                 SQLiteDatabase db=admin.getWritableDatabase();
 
                 String nom=name.getText().toString();

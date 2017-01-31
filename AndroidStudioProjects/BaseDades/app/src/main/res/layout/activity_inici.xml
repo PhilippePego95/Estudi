@@ -11,94 +11,67 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.philippe.basedades.Inici">
 
-    <TextView
-        android:text="Seleccionar model:   "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/marca"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="11dp"
-        android:id="@+id/textView16"
-        android:textStyle="normal|bold" />
-
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/checkBox2"
+        android:layout_alignBottom="@+id/gps"
         android:layout_alignParentEnd="true"
         android:id="@+id/radioGroup">
+
+        <RadioButton
+            android:text="Segur a tercers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/segur"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:textStyle="normal|bold"
+            android:layout_alignBaseline="@+id/deposit"
+            android:layout_alignBottom="@+id/deposit"
+            android:layout_alignStart="@+id/radioGroup" />
 
         <RadioButton
             android:text="Segur a tot risc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="17dp"
-            android:id="@+id/radioButton"
+            android:id="@+id/segurcomplet"
             android:layout_weight="1"
-            android:layout_alignTop="@+id/checkBox"
+            android:layout_alignTop="@+id/deposit"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="17dp"
             android:textStyle="normal|bold"
             android:textSize="18sp" />
     </RadioGroup>
 
-    <ImageView
-
-        android:layout_width="150dp"
-
+    <ImageView android:layout_width="150dp"
         app:srcCompat="@drawable/coche"
         android:id="@+id/imageView3"
         android:layout_height="150dp"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/inici"
-        android:layout_alignStart="@+id/radioButton2"
-        android:layout_above="@+id/radioButton2" />
+        android:layout_alignStart="@+id/segur"
+        android:layout_above="@+id/segur" />
 
     <TextView
         android:text="Numero de dies:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/checkBox2"
+        android:layout_below="@+id/gps"
         android:layout_alignParentStart="true"
         android:layout_marginTop="14dp"
         android:id="@+id/textView25"
         android:textStyle="normal|bold"
         android:textSize="18sp" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/editText"
-        android:textSize="18sp"
-        android:layout_alignBaseline="@+id/textView25"
-        android:layout_alignBottom="@+id/textView25"
-        android:layout_alignParentEnd="true"
-        android:hint="dies..."
-        android:layout_toEndOf="@+id/buscar"
-        android:layout_alignStart="@+id/radioGroup" />
-
-    <RadioButton
-        android:text="Segur a tercers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/radioButton2"
-        android:layout_weight="1"
-        android:textSize="18sp"
-        android:textStyle="normal|bold"
-        android:layout_alignBaseline="@+id/checkBox"
-        android:layout_alignBottom="@+id/checkBox"
-        android:layout_alignStart="@+id/radioGroup" />
-
     <CheckBox
         android:text="GPS"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/checkBox2"
+        android:id="@+id/gps"
         android:textSize="18sp"
         android:textStyle="normal|bold"
-        android:layout_below="@+id/checkBox"
+        android:layout_below="@+id/deposit"
         android:layout_alignParentStart="true"
         android:layout_marginTop="19dp" />
 
@@ -129,26 +102,58 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
 
-    <TextView
-        android:text="Seleccionar marca"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView14"
-        android:textStyle="normal|bold"
-        android:layout_marginTop="18dp"
-        android:layout_below="@+id/inici"
-        android:layout_alignParentStart="true" />
-
     <CheckBox
         android:text="Deposit ple"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/checkBox"
+        android:id="@+id/deposit"
         android:textSize="18sp"
         android:textStyle="normal|bold"
         android:layout_below="@+id/model"
         android:layout_alignParentStart="true"
         android:layout_marginTop="17dp" />
+
+    <TextView
+        android:text="Seleccionar model:   "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView16"
+        android:textStyle="normal|bold"
+        android:layout_below="@+id/marca"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/nudies"
+        android:layout_alignBaseline="@+id/textView25"
+        android:layout_alignBottom="@+id/textView25"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/radioGroup"
+        android:hint="numero de dies" />
+
+    <TextView
+        android:text="Usuari: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView45"
+        android:textStyle="normal|bold"
+        android:textSize="18sp"
+        android:layout_below="@+id/inici"
+        android:layout_alignStart="@+id/textView14"
+        android:layout_marginTop="11dp" />
+
+    <TextView
+        android:text="user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/idsu"
+        android:textStyle="normal|bold"
+        android:textSize="16sp"
+        android:layout_alignBottom="@+id/textView45"
+        android:layout_toEndOf="@+id/textView45" />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -157,6 +162,16 @@
         android:id="@+id/factura"
         android:elevation="6dp"
         android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/textView16" />
+        android:layout_toEndOf="@+id/deposit" />
+
+    <TextView
+        android:text="Seleccionar marca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView14"
+        android:textStyle="normal|bold"
+        android:layout_below="@+id/textView45"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="11dp" />
 
 </RelativeLayout>

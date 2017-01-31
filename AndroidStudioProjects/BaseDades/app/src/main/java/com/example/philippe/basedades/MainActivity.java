@@ -1,6 +1,8 @@
 package com.example.philippe.basedades;
 
 import android.app.DialogFragment;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,7 +18,7 @@ import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
-
+    String cotxe="cotxe1.db";
     EditText et1,et2;
     private Cursor fila,f;
     @Override
@@ -38,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 String pw=et2.getText().toString();
 
 
-                BaseDadesCotxe admin=new BaseDadesCotxe(MainActivity.this,"DBCOTXES.db",null,1);
+                BaseDadesCotxe admin=new BaseDadesCotxe(MainActivity.this,cotxe,null,1);
                 SQLiteDatabase db=admin.getWritableDatabase();
 
 
@@ -57,8 +59,8 @@ public class MainActivity extends AppCompatActivity {
 
                         //Menu es una nueva actividad empty
                         Intent ventana=new Intent(MainActivity.this,Inici.class);
-                        ventana.putExtra("nom",et1.getText().toString());
-                        ventana.putExtra("pass",et2.getText().toString());
+                      //  ventana.putExtra("nom",et1.getText().toString());
+                       // ventana.putExtra("pass",et2.getText().toString());
                         startActivity(ventana);
 
                         Toast toast1 = Toast.makeText(getApplicationContext(),"entrant...", Toast.LENGTH_SHORT);
@@ -69,6 +71,11 @@ public class MainActivity extends AppCompatActivity {
                     toast1.show();
 
                 }
+                SharedPreferences prefs = getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putString("nombre", nom);
+                editor.putString("pwd", pw);
+                editor.commit();
             }
         });
         Salir.setOnClickListener(new View.OnClickListener() {
