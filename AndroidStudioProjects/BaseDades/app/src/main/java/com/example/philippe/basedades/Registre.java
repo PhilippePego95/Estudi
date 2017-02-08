@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 
 public class Registre extends AppCompatActivity {
-    String cotxe="cotxe5.db";
+    String cotxe="cotxe6.db";
 
     EditText user,pass,name;
     @Override

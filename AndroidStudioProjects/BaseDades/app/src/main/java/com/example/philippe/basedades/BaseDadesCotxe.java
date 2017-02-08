@@ -19,7 +19,7 @@ public class BaseDadesCotxe extends SQLiteOpenHelper {
     String marca= "CREATE TABLE MARCA(model text primary key)";
     String insertmarca="INSERT INTO MARCA values('Ford')";
 
-    String cotxe= "CREATE TABLE COTXE(marca text ,model text primary key,preu integer,FOREIGN KEY (model) REFERENCES COTXE(marca) ON DELETE CASCADE)";
+    String cotxe= "CREATE TABLE COTXE(marca text ,model text primary key,preu integer,FOREIGN KEY (marca) REFERENCES MARCA(model) ON DELETE CASCADE)";
     String insertcotxe="INSERT INTO COTXE values('Ford','Fiesta','70')";
 
     String factu="CREATE TABLE FACTURA (ID INTEGER PRIMARY KEY AUTOINCREMENT, usuari text, dades text, preutotal text,FOREIGN KEY (usuari) REFERENCES USER(usuari))";

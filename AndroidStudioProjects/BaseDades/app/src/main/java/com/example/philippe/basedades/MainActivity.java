@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
-    String cotxe="cotxe5.db";
+    String cotxe="cotxe6.db";
     EditText et1,et2;
     private Cursor fila,f;
     @Override

@@ -21,7 +21,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class NouModel extends AppCompatActivity {
-    String cotxe="cotxe5.db";
+    String cotxe="cotxe6.db";
     String mod;
      EditText model,preu;
     private Marca[] dades;
@@ -66,7 +66,7 @@ public class NouModel extends AppCompatActivity {
                     }
 
                 } catch (Exception e) {
-                    Toast toast1 = Toast.makeText(getApplicationContext(), "Hi ha caps buids...", Toast.LENGTH_SHORT);
+                    Toast toast1 = Toast.makeText(getApplicationContext(), "Hi ha alguns caps buids...", Toast.LENGTH_SHORT);
                     toast1.show();
                 }
 
