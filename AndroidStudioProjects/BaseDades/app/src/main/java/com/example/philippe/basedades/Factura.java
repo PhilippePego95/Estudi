@@ -25,18 +25,18 @@ public class Factura extends AppCompatActivity {
 
         String Tsegur=getIntent().getStringExtra("segur");
 
-        String dadesCotxe=getIntent().getStringExtra("dadesmarca");
+        String dadesCotxe=getIntent().getStringExtra("dadesmarca")+"€";
 
-        String tiempo=getIntent().getStringExtra("temps");
+        String tiempo=getIntent().getStringExtra("temps")+" dies";
 
-        String deposit=getIntent().getStringExtra("deposit");
+        //String deposit=getIntent().getStringExtra("deposit");
        // String pdeposit=getIntent().getStringExtra("pdeposit");
 
-        String gps=getIntent().getStringExtra("gps");
+        String comp=getIntent().getStringExtra("comple");
       //  String pgps=getIntent().getStringExtra("pgps");
 
-        String comp=(deposit+" "+gps);
-        String sum=getIntent().getStringExtra("total");
+       // String compli=(deposit+" "+gps);
+        String sum=getIntent().getStringExtra("total")+"€";
 
         sumaTotal.setText(sum);
         complements.setText(comp);

@@ -22,7 +22,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class NouMarca extends AppCompatActivity {
-    String cotxe="cotxe1.db";
+    String cotxe="cotxe5.db";
 
     private Marca[] dades;
     public ArrayList<Marca> marcas = new ArrayList<Marca>();

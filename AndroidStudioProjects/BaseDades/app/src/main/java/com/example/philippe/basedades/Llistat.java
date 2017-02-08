@@ -23,7 +23,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class Llistat extends AppCompatActivity {
-    String cotxe="cotxe1.db";
+    String cotxe="cotxe5.db";
 
     private LlistaCompres[] dades;
     public ArrayList<LlistaCompres> llistatCompres = new ArrayList<LlistaCompres>();

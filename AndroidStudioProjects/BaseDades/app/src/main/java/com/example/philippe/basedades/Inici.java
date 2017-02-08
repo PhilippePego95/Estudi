@@ -30,13 +30,14 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class Inici extends AppCompatActivity {
-    String cotxe="cotxe1.db";
+    String cotxe="cotxe5.db";
     String depos=" ";
     String gp=" ";
     Integer Pgps=0;
     Integer Pdeposit=0;
-    String seguro =" ";
+    String  seguro = "Segur a tercers";
     Integer Psegur=0;
+    String complement=" ";
     private String dmodel,dpreu,marcass,marcasel,nombre;
     private Marca[] dades;
     public ArrayList<Marca> marcas = new ArrayList<Marca>();
@@ -80,59 +81,63 @@ public class Inici extends AppCompatActivity {
         factura.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent factura = new Intent(Inici.this, Factura.class);
-                factura.putExtra("segur",seguro);
-                String dadescotxe= marcasel+" "+dmodel+" "+dpreu;
+               try {
+                   String dadescotxe = marcasel + " " + dmodel + " " + dpreu;
+
+                   String ndies = dies.getText().toString();
+                   int preuCotxe = Integer.parseInt(dpreu);
+                   // int preuDeposit=Pdeposit;
+                   int numdies = 0;
+                   try {
+                       numdies = Integer.parseInt(ndies);
+                   } catch (Exception e) {
+
+                   }
+                   if (deposit.isChecked() & gps.isChecked()) {
+                       complement = "Deposit ple i GPS";
+
+                   } else {
+                       if (deposit.isChecked()) {
+                           //Codigo si el boton esta marcado
+                           depos = "Deposit ple";
+                           Pdeposit = 60;
+                       }
+                       if (gps.isChecked()) {
+                           //Codigo si el boton esta marcado
+                           gp = "GPS";
+                           Pgps = 20;
+                       }
+                       complement = depos + gp;
+                   }
 
 
-                String ndies =dies.getText().toString();
-                int preuCotxe = Integer.parseInt(dpreu);
-               // int preuDeposit=Pdeposit;
-                int numdies=0;
-                try {
-                numdies=Integer.parseInt(ndies);
-                }catch (Exception e){
+                   int total = ((preuCotxe + Psegur) * numdies + Pdeposit + Pgps);
+                   String sumaTotal = String.valueOf(total);
 
-                }
-                if (deposit.isChecked()){
-                    //Codigo si el boton esta marcado
-                    depos = "Deposit ple";
-                    Pdeposit=60;
-                }
-                if (gps.isChecked()){
-                    //Codigo si el boton esta marcado
-                    gp = "GPS";
-                    Pgps=20;
-                }
-               // int preuSegur=Psegur;
-              //  int preuGPS=Pgps;
+                   if (numdies < 1) {
+                       Toast.makeText(getApplicationContext(), "Fica algun dia", Toast.LENGTH_LONG).show();
 
+                   } else {
+                       Intent factura = new Intent(Inici.this, Factura.class);
+                       factura.putExtra("segur", seguro);
+                       factura.putExtra("dadesmarca", dadescotxe);
+                       factura.putExtra("temps", ndies);
+                       factura.putExtra("total", sumaTotal);
+                       factura.putExtra("comple", complement);
+                       factura.putExtra("pdeposit", Pdeposit);
+                       //  factura.putExtra("gps",gp);
+                       startActivity(factura);
 
+                       BaseDadesCotxe admin = new BaseDadesCotxe(Inici.this, cotxe, null, 1);
+                       SQLiteDatabase db = admin.getWritableDatabase();
 
-                int  total = ((preuCotxe + Psegur) * numdies + Pdeposit + Pgps);
-                factura.putExtra("dadesmarca",dadescotxe);
-                String sumaTotal=String.valueOf(total);
+                       db.execSQL("INSERT INTO FACTURA (usuari,dades,preutotal)values('" + nombre + "','" + dadescotxe + "','" + sumaTotal + "')");
+                       db.close();
+                   }
+               }catch (Exception e){
+                    Toast.makeText(getApplicationContext(), "Selecciona un model", Toast.LENGTH_LONG).show();
 
-                factura.putExtra("temps",ndies);
-
-
-                factura.putExtra("total",sumaTotal);
-                factura.putExtra("deposit",depos);
-                factura.putExtra("pdeposit",Pdeposit);
-
-                factura.putExtra("gps",gp);
-
-                startActivity(factura);
-
-                BaseDadesCotxe admin=new BaseDadesCotxe(Inici.this,cotxe,null,1);
-                SQLiteDatabase db=admin.getWritableDatabase();
-
-               // String nom=name.getText().toString();
-               // String usuari=user.getText().toString();
-               // String pwd=pass.getText().toString();
-                       //             "ID,usuari,dades,preutotal
-                db.execSQL("INSERT INTO FACTURA (usuari,dades,preutotal)values('"+nombre+"','"+dadescotxe+"','"+sumaTotal+"')");
-                db.close();
+               }
             }
         });
 
@@ -264,6 +269,16 @@ public class Inici extends AppCompatActivity {
              case R.id.dell:
                  Intent delete=new Intent(Inici.this,Delete.class);
                  startActivity(delete);MyDialogFragment.newInstance("Cadena de ejemplo como parÃ¡metro");
+
+                return true;
+            case R.id.local:
+                Intent local=new Intent(Inici.this,Local.class);
+                startActivity(local);MyDialogFragment.newInstance("Cadena de ejemplo como parÃ¡metro");
+
+                return true;
+             case R.id.ix:
+                 Intent log=new Intent(Inici.this,MainActivity.class);
+                 startActivity(log);MyDialogFragment.newInstance("Cadena de ejemplo como parÃ¡metro");
 
                 return true;
             default:

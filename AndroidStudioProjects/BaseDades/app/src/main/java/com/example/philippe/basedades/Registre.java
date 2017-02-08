@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 
 public class Registre extends AppCompatActivity {
-    String cotxe="cotxe1.db";
+    String cotxe="cotxe5.db";
 
     EditText user,pass,name;
     @Override
@@ -34,19 +34,28 @@ public class Registre extends AppCompatActivity {
         gurdar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BaseDadesCotxe admin=new BaseDadesCotxe(Registre.this,cotxe,null,1);
-                SQLiteDatabase db=admin.getWritableDatabase();
+                try {
+                    BaseDadesCotxe admin = new BaseDadesCotxe(Registre.this, cotxe, null, 1);
+                    SQLiteDatabase db = admin.getWritableDatabase();
 
-                String nom=name.getText().toString();
-                String usuari=user.getText().toString();
-                String pwd=pass.getText().toString();
+                    String nom = name.getText().toString();
+                    String usuari = user.getText().toString();
+                    String pwd = pass.getText().toString();
+                    if (nom.isEmpty() || usuari.isEmpty() || pwd.isEmpty()) {
+                        Toast.makeText(getApplicationContext(), "Hi ha algun camp buid", Toast.LENGTH_LONG).show();
 
-                db.execSQL("INSERT INTO USER values('"+usuari+"','"+nom+"','"+pwd+"')");
-                db.close();
-                Toast toast1 = Toast.makeText(getApplicationContext(),"Guardant usuari...", Toast.LENGTH_SHORT);
-                toast1.show();
-                Intent ven=new Intent(Registre.this,MainActivity.class);
-                startActivity(ven);
+                    } else {
+                        db.execSQL("INSERT INTO USER values('" + usuari + "','" + nom + "','" + pwd + "')");
+                        db.close();
+                        Toast toast1 = Toast.makeText(getApplicationContext(), "Guardant usuari...", Toast.LENGTH_SHORT);
+                        toast1.show();
+                        Intent ven = new Intent(Registre.this, MainActivity.class);
+                        startActivity(ven);
+                     }
+                }catch (Exception e){
+                    Toast.makeText(getApplicationContext(), "El usuari no esta disponible", Toast.LENGTH_LONG).show();
+
+                }
             }
         });
 

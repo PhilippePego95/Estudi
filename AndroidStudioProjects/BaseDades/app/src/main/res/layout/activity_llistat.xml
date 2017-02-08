@@ -36,7 +36,7 @@
         android:id="@+id/llistafact" />
 
     <TextView
-        android:text="Lloguers realitzars"
+        android:text="Lloguers realitzats"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView30"

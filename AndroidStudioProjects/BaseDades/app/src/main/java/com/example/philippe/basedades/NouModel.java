@@ -21,8 +21,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class NouModel extends AppCompatActivity {
-    String cotxe="cotxe1.db";
-
+    String cotxe="cotxe5.db";
     String mod;
      EditText model,preu;
     private Marca[] dades;
@@ -44,21 +43,37 @@ public class NouModel extends AppCompatActivity {
                 startActivity(back);
             }
         });
+        //String nom=name.getText().toString();
         guardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BaseDadesCotxe admin=new BaseDadesCotxe(NouModel.this,cotxe,null,1);
-                SQLiteDatabase db1=admin.getWritableDatabase();
-                String models=model.getText().toString();
-                Integer cost = Integer.valueOf(preu.getText().toString());
-                db1.execSQL("INSERT INTO COTXE values('"+mod+"','"+models+"','"+cost+"')");
-                db1.close();
-                Toast toast1 = Toast.makeText(getApplicationContext(),"Nou model creat...", Toast.LENGTH_SHORT);
-                toast1.show();
+                BaseDadesCotxe admin = new BaseDadesCotxe(NouModel.this, cotxe, null, 1);
+                SQLiteDatabase db1 = admin.getWritableDatabase();
 
-                Intent ventana=new Intent(NouModel.this,Inici.class);
-                startActivity(ventana);
+                try {
+                    String models = model.getText().toString();
+                    Integer cost = Integer.valueOf(preu.getText().toString());
+                    if (models.isEmpty() || cost < 1) {
+                        Toast toast1 = Toast.makeText(getApplicationContext(), "Hi ha caps buids...", Toast.LENGTH_SHORT);
+                        toast1.show();
+                    } else {
+                        db1.execSQL("INSERT INTO COTXE values('" + mod + "','" + models + "','" + cost + "')");
+                        db1.close();
+                        Toast toast2 = Toast.makeText(getApplicationContext(), "Nou model creat...", Toast.LENGTH_SHORT);
+                        toast2.show();
+                        Intent ventana = new Intent(NouModel.this, Inici.class);
+                        startActivity(ventana);
+                    }
+
+                } catch (Exception e) {
+                    Toast toast1 = Toast.makeText(getApplicationContext(), "Hi ha caps buids...", Toast.LENGTH_SHORT);
+                    toast1.show();
+                }
+
+
             }
+
+
         });
     BaseDadesCotxe admin=new BaseDadesCotxe(NouModel.this,cotxe,null,1);
     SQLiteDatabase db=admin.getWritableDatabase();

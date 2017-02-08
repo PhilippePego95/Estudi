@@ -77,17 +77,6 @@
         android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/dadesVehicle"
-        android:textSize="18sp"
-        android:layout_alignBaseline="@+id/textView27"
-        android:layout_alignBottom="@+id/textView27"
-        android:layout_toEndOf="@+id/textView27"
-        android:layout_marginStart="13dp" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_above="@+id/textView29"
         android:layout_alignStart="@+id/dadesVehicle"
         android:id="@+id/dies"
@@ -123,27 +112,37 @@
         android:layout_alignStart="@+id/Fsegur" />
 
     <TextView
+        android:text="Dades del vehicle:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="47dp"
+        android:id="@+id/textView27"
+        android:textStyle="normal|bold"
+        android:textSize="18sp"
+        android:layout_below="@+id/textView26"
+        android:layout_alignParentStart="true" />
+
+    <TextView
         android:text="Total:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="59dp"
+        android:layout_marginTop="62dp"
         android:id="@+id/Total "
         android:textAppearance="@style/TextAppearance.AppCompat.Button"
         android:textStyle="normal|bold"
         android:textSize="20sp"
         android:layout_below="@+id/textView36"
-        android:layout_alignStart="@+id/textView36" />
+        android:layout_alignEnd="@+id/textView29" />
 
     <TextView
-        android:text="Dades del vehicle:"
+        android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
-        android:id="@+id/textView27"
-        android:textStyle="normal|bold"
+        android:id="@+id/dadesVehicle"
         android:textSize="18sp"
-        android:layout_marginStart="39dp"
-        android:layout_below="@+id/textView26"
-        android:layout_alignParentStart="true" />
+        android:layout_marginStart="23dp"
+        android:layout_alignBaseline="@+id/textView27"
+        android:layout_alignBottom="@+id/textView27"
+        android:layout_toEndOf="@+id/textView27" />
 
 </RelativeLayout>

@@ -19,20 +19,22 @@ public class BaseDadesCotxe extends SQLiteOpenHelper {
     String marca= "CREATE TABLE MARCA(model text primary key)";
     String insertmarca="INSERT INTO MARCA values('Ford')";
 
-    String cotxe= "CREATE TABLE COTXE(marca text ,model text primary key,preu integer,FOREIGN KEY (model) REFERENCES COTXE(marca))";
+    String cotxe= "CREATE TABLE COTXE(marca text ,model text primary key,preu integer,FOREIGN KEY (model) REFERENCES COTXE(marca) ON DELETE CASCADE)";
     String insertcotxe="INSERT INTO COTXE values('Ford','Fiesta','70')";
 
     String factu="CREATE TABLE FACTURA (ID INTEGER PRIMARY KEY AUTOINCREMENT, usuari text, dades text, preutotal text,FOREIGN KEY (usuari) REFERENCES USER(usuari))";
     String insertfactu="INSERT INTO FACTURA values(1,'phil','Ford Fiesta 70','200')";
     // /nom,punts,root
+    String delete="PRAGMA foreing_keys=ON;";
     @Override
     public void onCreate(SQLiteDatabase db) {
+        db.execSQL(delete);
+
         db.execSQL(usuaris);
         db.execSQL(insertAdmin);
 
         db.execSQL(marca);
         db.execSQL(insertmarca);
-
 
         db.execSQL(cotxe);
         db.execSQL(insertcotxe);
@@ -40,6 +42,13 @@ public class BaseDadesCotxe extends SQLiteOpenHelper {
         db.execSQL(factu);
         db.execSQL(insertfactu);
 
+
+    }
+
+    @Override
+    public void onOpen(SQLiteDatabase db) {
+        super.onOpen(db);
+        db.setForeignKeyConstraintsEnabled(true);
     }
 
     @Override
